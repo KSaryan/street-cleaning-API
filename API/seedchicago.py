@@ -10,7 +10,7 @@ import requests
 def create_months():
     """Creates months in months tables"""
 
-    print "Months"
+    print("Months")
 
     Month.query.delete()
 
@@ -28,11 +28,13 @@ def create_months():
 def create_cleanings():
     """creates cleanings in cleanings table"""
 
-    print "Cleanings"
+    print("Cleanings")
 
     Cleaning.query.delete()
 
     url = "https://data.cityofchicago.org/resource/6qug-dskz.json?$limit=100000"
+
+
 
     response = requests.get(url)
     if response.status_code == 200:
@@ -51,7 +53,16 @@ def create_cleanings():
                 db.session.add(c)
                 db.session.commit()
 
-
+    # while(1):
+    #     requestOK = True
+    #     try:
+    #        r = session.get(requestURL, headers=headers, timeout=None)
+    #     except requests.exceptions.ConnectionError: 
+    #        print ("'Connection aborted.', error(54, 'Connection reset by peer')")
+    #        print ("\tResend request...")
+    #        requestOK = False
+    #     if requestOK:
+    #        break
 
 if __name__ == "__main__":
     #later can import app from server
