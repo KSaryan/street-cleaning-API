@@ -21,7 +21,3 @@ US. It is currently incomplete.
 
 ## <a name="install"></a>Installation
 
-```
-
-
-## <a name="testing"></a> Testing
